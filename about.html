@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | CreatArsh</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.7;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* Navigation */
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Section Styling */
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ff4d4d;
+    }
+    .section p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      color: #ff4d4d;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      color: #555;
+    }
+
+    /* Team Section */
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .member {
+      background: #fff;
+      border-radius: 15px;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .member h4 {
+      margin-bottom: 0.5rem;
+      color: #ff4d4d;
+    }
+    .member p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial h4 {
+      text-align: right;
+      color: #ff4d4d;
+    }
+
+    /* CTA Button */
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta a {
+      background: #ff4d4d;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #e03e3e;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    /* Responsive Text */
+    @media(max-width: 768px){
+      .hero h2 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CreatArsh</h1>
+    <p>Designing Creative Experiences That Speak Your Vision</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="order.html">Order</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Our Journey, Vision, and Creativity</h2>
+      <p>At CreatArsh, we merge imagination with strategy to create designs that resonate with your audience and elevate your brand.</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section" id="our-story">
+    <h2>Our Story</h2>
+    <p>CreatArsh was born from a vision to transform the world of digital and print design into something truly exceptional. Starting as a small team with a passion for creative expression, we committed ourselves to mastering the art of visual storytelling. Over the years, our journey has been fueled by curiosity, innovation, and the relentless pursuit of excellence.</p>
+    <p>From humble beginnings to becoming a trusted partner for businesses, startups, and creative minds, our story is one of perseverance, growth, and an unwavering dedication to quality. Every project we take on is a testament to our journey and the values we hold dear.</p>
+    <p>We believe that design is more than aesthetics—it’s a language that communicates ideas, evokes emotions, and builds connections. This belief has guided us through countless projects, shaping us into a creative agency that delivers not just visuals, but experiences.</p>
+    <p>Throughout our journey, we’ve learned that collaboration, empathy, and understanding our clients’ vision are the keys to delivering designs that truly matter. Our story is intertwined with the success stories of the clients we’ve worked with, and it continues to evolve with each new challenge and opportunity.</p>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="section" id="vision-mission">
+    <h2>Vision & Mission</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To become a leading creative design agency that inspires, engages, and transforms businesses through exceptional visual storytelling, blending artistry with strategy to create meaningful impact.</p>
+      </div>
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To provide innovative, high-quality design solutions that help our clients communicate their message effectively, stand out in their industry, and connect with their audiences in meaningful ways.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section" id="values">
+    <h2>Our Core Values</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Creativity</h3>
+        <p>We push the boundaries of imagination to deliver unique and compelling designs.</p>
+      </div>
+      <div class="card">
+        <h3>Integrity</h3>
+        <p>We maintain honesty and transparency in every interaction and project.</p>
+      </div>
+      <div class="card">
+        <h3>Collaboration</h3>
+        <p>We believe in the power of teamwork and actively involve our clients in the creative process.</p>
+      </div>
+      <div class="card">
+        <h3>Excellence</h3>
+        <p>We strive for the highest quality in all our work, ensuring every detail matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creative Process -->
+  <section class="section" id="process">
+    <h2>Our Creative Process</h2>
+    <p>At CreatArsh, our creative process is meticulously designed to ensure that every project reflects the client’s vision and resonates with their audience.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Discovery</h3>
+        <p>We begin by understanding your brand, goals, and audience, conducting research to inform our creative strategy.</p>
+      </div>
+      <div class="card">
+        <h3>Conceptualization</h3>
+        <p>We brainstorm and explore multiple ideas, translating concepts into visual narratives that align with your objectives.</p>
+      </div>
+      <div class="card">
+        <h3>Design & Development</h3>
+        <p>Our team crafts visually compelling designs, iterating with feedback to refine and perfect each element.</p>
+      </div>
+      <div class="card">
+        <h3>Delivery & Support</h3>
+        <p>We deliver final assets ready for implementation and provide ongoing support to ensure long-term success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section" id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team">
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Founder"/>
+        <h4>Arsh Patel</h4>
+        <p>Founder & Creative Director – The visionary behind CreatArsh, specializing in branding and design strategy.</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Designer"/>
+        <h4>Neha Sharma</h4>
+        <p>Lead Designer – Bringing concepts to life with a keen eye for aesthetics and attention to detail.</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/80.jpg" alt="Marketing"/>
+        <h4>Rohit Mehra</h4>
+        <p>Marketing & Client Relations – Ensuring your vision reaches the right audience effectively.</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/women/70.jpg" alt="Project Manager"/>
+        <h4>Sana Khan</h4>
+        <p>Project Manager – Coordinating projects seamlessly from concept to delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="cards">
+      <div class="testimonial">
+        <p>“CreatArsh transformed our brand identity! The designs were creative, timely, and truly captured our vision. Highly recommended!”</p>
+        <h4>- Tech Startup Founder</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Working with CreatArsh was a game-changer for our social media presence. Their designs engage and convert!”</p>
+        <h4>- Content Creator</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Professional, creative, and responsive. The team at CreatArsh exceeded our expectations in every way.”</p>
+        <h4>- E-commerce Brand Manager</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Goals -->
+  <section class="section" id="future-goals">
+    <h2>Our Future Goals</h2>
+    <p>At CreatArsh, we are constantly evolving, pushing the boundaries of design and creativity. Our future goals include:</p>
+    <ul>
+      <li>Expanding our team with world-class talent.</li>
+      <li>Integrating the latest design technologies and tools.</li>
+      <li>Building long-term partnerships with global brands.</li>
+      <li>Continuing to create designs that inspire, engage, and make an impact.</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <a href="order.html">Start Your Project With Us Today</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CreatArsh. All rights reserved.</p>
+  </footer>
+</body>
+</html>
