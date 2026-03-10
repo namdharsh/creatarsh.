@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Start Project - Creatarsh</title>
+
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<header>
+
+<h1 class="logo-title">
+<img src="logo.png">
+Creatarsh
+</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="order.html">Start Project</a>
+</nav>
+
+</header>
+
+
+<section class="section">
+
+<h2 class="page-title">Start Your Project</h2>
+
+<p class="page-subtitle">
+Tell us about your project and we will contact you.
+</p>
+
+</section>
+
+
+<section class="order-container">
+
+<form class="order-form" id="orderForm">
+
+<label>Your Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Service Needed</label>
+
+<select>
+<option>Website Development</option>
+<option>App Development</option>
+<option>Graphic Design</option>
+<option>Video Editing</option>
+</select>
+
+<label>Project Budget</label>
+
+<select>
+<option>₹2000 - ₹5000</option>
+<option>₹5000 - ₹10000</option>
+<option>₹10000 - ₹25000</option>
+<option>₹25000+</option>
+</select>
+
+<label>Project Details</label>
+
+<textarea placeholder="Describe your project"></textarea>
+
+<button class="btn primary">Submit Project</button>
+
+</form>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Need Help?</h2>
+
+<p>You can also contact us directly on WhatsApp.</p>
+
+<a class="btn primary" href="#">Chat on WhatsApp</a>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Creatarsh. All Rights Reserved.</p>
+
+</footer>
+
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDnFynOLEZtPsMp-LbMgKKi8CdfgSNgzOA",
+    authDomain: "creatarsh-7dacd.firebaseapp.com",
+    projectId: "creatarsh-7dacd",
+    storageBucket: "creatarsh-7dacd.firebasestorage.app",
+    messagingSenderId: "851125292109",
+    appId: "1:851125292109:web:aba1e5e34c943e9ea4a004",
+    measurementId: "G-NGMTSGG8Y5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<script>
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const service = document.getElementById("service").value;
+const message = document.getElementById("message").value;
+
+firebase.firestore().collection("orders").add({
+name: name,
+email: email,
+service: service,
+message: message,
+date: new Date()
+});
+
+alert("Order submitted successfully!");
+
+});
+
+</script>
+</body>
+</html>
