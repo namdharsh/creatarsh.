@@ -51,14 +51,13 @@ Tell us about your project and we will contact you.
 <form class="order-form" id="orderForm">
 
 <label>Your Name</label>
-<input type="text" placeholder="Enter your name" required>
+<input type="text" id="name" placeholder="Enter your name" required>
 
 <label>Email Address</label>
-<input type="email" placeholder="Enter your email" required>
+<input type="email" id="email" placeholder="Enter your email" required>
 
 <label>Service Needed</label>
-
-<select>
+<select id="service">
 <option>Website Development</option>
 <option>App Development</option>
 <option>Graphic Design</option>
@@ -66,8 +65,7 @@ Tell us about your project and we will contact you.
 </select>
 
 <label>Project Budget</label>
-
-<select>
+<select id="budget">
 <option>₹2000 - ₹5000</option>
 <option>₹5000 - ₹10000</option>
 <option>₹10000 - ₹25000</option>
@@ -75,8 +73,7 @@ Tell us about your project and we will contact you.
 </select>
 
 <label>Project Details</label>
-
-<textarea placeholder="Describe your project"></textarea>
+<textarea id="details"></textarea>
 
 <button class="btn primary">Submit Project</button>
 
@@ -151,4 +148,5 @@ alert("Order submitted successfully!");
 
 </script>
 </body>
+
 </html>
