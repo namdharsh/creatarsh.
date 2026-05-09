@@ -1,0 +1,41 @@
+/* style.css */
+
+body{
+  font-family:Arial;
+  background:#111827;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  background:#1f2937;
+  padding:40px;
+  border-radius:20px;
+  width:400px;
+  text-align:center;
+}
+
+input,
+button{
+  width:100%;
+  margin-top:15px;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+}
+
+button{
+  background:#00bfff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:20px;
+  background:#374151;
+  padding:10px;
+  border-radius:10px;
+}

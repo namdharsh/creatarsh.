@@ -1,0 +1,37 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Compressor</title>
+  <link rel="stylesheet" href="istyle.css">
+
+  <!-- Compression Library -->
+  <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+
+  <!-- Zip Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Image Compressor Tool</h1>
+
+    <input type="file" id="imageInput" multiple accept="image/*">
+
+    <input type="number" id="targetSize" placeholder="Target Size KB">
+
+    <button onclick="compressImages()">
+      Compress Images
+    </button>
+
+    <div id="output"></div>
+
+  </div>
+
+  <script src="iscript.js"></script>
+
+</body>
+</html>
